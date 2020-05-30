@@ -6,7 +6,7 @@ It was built using PHP, bit (Bitcoin's library) and web3 (Ethereum's Library).
 
 Please follow the following transactions to use the wallet:
 
-# 1. Derive Wallets:
+### 1. Derive Wallets:
 def derive_wallets(mnemonic, coin, numderive):
     command = f'php ./derive -g --mnemonic="{mnemonic}" --cols=path,address,privkey,pubkey,pubkeyhash,xprv,xpub --coin="{coin}" numderive="{numderive}" --format=json'
     p = subprocess.Popen(command, stdout=subprocess.PIPE, shell=True)
@@ -15,18 +15,18 @@ def derive_wallets(mnemonic, coin, numderive):
     keys = json.loads(output)
     return keys
 
-# 2. Linking the transaction signing libraries:
+### 2. Linking the transaction signing libraries:
 def priv_key_to_account(coin, priv_key):
     if coin == ETH:
         return Account.privateKeyToAccount(priv_key)
     elif coin == BTCTEST:
         return PrivateKeyTestnet(priv_key)
 
-# 3. Setting Ethereum/Bitcoin 
+### 3. Setting Ethereum/Bitcoin 
 eth_acc = priv_key_to_account(ETH, derive_wallets(mnemonic, ETH, 5)[0]['privkey'])
 btc_acc = priv_key_to_account(BTCTEST, derive_wallets(mnemonic, BTCTEST, 5)[0]['privkey'])
 
-# 4. Creating the Transaction:
+### 4. Creating the Transaction:
 def create_tx(coin, account, recipient, amount):
     if coin == ETH:
         gasEstimate = w3.eth.estimateGas({"from": eth_acc.address, "to": recipient, "value": amount})
@@ -41,7 +41,7 @@ def create_tx(coin, account, recipient, amount):
     elif coin == BTCTEST:
         return PrivateKeyTestnet.prepare_transaction(btc_acc.address, [(recipient, amount, BTC)])
         
-# 5. Sending the Transaction:
+### 5. Sending the Transaction:
 def send_tx(coin, account, recipient, amount):
     txn = create_tx(coin, account, recipient, amount)
     if coin == ETH:
@@ -55,7 +55,7 @@ def send_tx(coin, account, recipient, amount):
         
 Now that you've ran these functions, you have the choice of either making Ethereum or BTC-Test Transactions. You can run these transactions in Bash or within your Python script. If your running these transactions within your Python script, run the following functions:
 
-# 6. Executing Functions
+### 6. Executing Functions
 create_tx(ETH, eth_acc, '0x66588F330cF4741C8E05a9d8c45FB2810ecffff2', 10000)
 send_tx(ETH, eth_acc, '0x527775c4b25b14721ad1dB9D190dA5a5d5aF3a91', 10000)
 
@@ -68,4 +68,4 @@ from wallet import *
 
 and then run the preceding functions.
 
-!(screenshots/ETH_Transaction_Details.png)
+![ETH Transaction Details](screenshots/ETH_Transaction_Details.png)
