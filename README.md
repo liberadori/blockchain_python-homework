@@ -68,4 +68,6 @@ from wallet import *
 
 and then run the preceding functions.
 
-![ETH Transaction Details](screenshots/ETH_Transaction_Details.png)
+![ETH Transaction Details](screenshots/ETH_Transaction_Details.PNG)
+
+
