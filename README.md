@@ -69,4 +69,3 @@ from wallet import *
 and then run the preceding functions.
 
 !(screenshots/ETH_Transaction_Details.png)
-
