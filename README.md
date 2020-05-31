@@ -69,6 +69,8 @@ from wallet import *
 and then run the preceding functions.
 
 
+
+
 Please see below for transaction screenshots:
 
 - Funding Account and Obtaining Balance
