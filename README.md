@@ -68,6 +68,7 @@ from wallet import *
 
 and then run the preceding functions.
 
+
 Please see below for transaction screenshots:
 
 - Funding Account and Obtaining Balance
@@ -84,5 +85,3 @@ Please see below for transaction screenshots:
 
 - BTC Test-Net Transaction Details
 ![BTC TestNet Transaction Details](screenshots/BTC_TestNet_Transaction_Details.PNG)
-
-
