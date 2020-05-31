@@ -68,6 +68,21 @@ from wallet import *
 
 and then run the preceding functions.
 
+Please see below for transaction screenshots:
+
+- Funding Account and Obtaining Balance
+![ETH Account Balance](screenshots/ETH_Account_Balance.PNG)
+
+- Sending a Transaction and Obtaining Transaction Details
 ![ETH Transaction Details](screenshots/ETH_Transaction_Details.PNG)
+
+- BTC Test Faucet, Obtaining BTC Test-Net funds
+![BTC_TestNet](screenshots/BTC_TestNet.PNG)
+
+- BTC Test-Net Transactions
+![BTC TestNet Transaction](screenshots/BTC_TestNet_Transaction.PNG)
+
+- BTC Test-Net Transaction Details
+![BTC TestNet Transaction Details](screenshots/BTC_TestNet_Transaction_Details.PNG)
 
 
